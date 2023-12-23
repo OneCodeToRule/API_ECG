@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, JSON, ForeignKey
-from app_test.database import Base
+from wip.database import Base
 
 class ECG(Base):
     __tablename__ = "ecgs"

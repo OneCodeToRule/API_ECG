@@ -2,10 +2,7 @@ from datetime import datetime, timedelta
 
 import jwt
 from fastapi.security import OAuth2PasswordBearer
-from fastapi import HTTPException, status
 from passlib.context import CryptContext
-
-# from app.models import User
 
 
 JWT_SECRET = "mysecretkey"  # Debería ser una clave segura en un entorno real
@@ -62,17 +59,17 @@ def create_access_token(data: dict, expires_delta: timedelta = timedelta(minutes
     return encoded_jwt
 
 
-def decode_token(token: str):
-    try:
-        payload = jwt.decode(token, JWT_SECRET, algorithms=[ALGORITHM])
-        username = payload.get("sub")
-        if username is None:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
-        return username
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail="Token expired")
-    except jwt.JWTError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
+# def decode_token(token: str):
+#     try:
+#         payload = jwt.decode(token, JWT_SECRET, algorithms=[ALGORITHM])
+#         username = payload.get("sub")
+#         if username is None:
+#             raise HTTPException(
+#                 status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
+#         return username
+#     except jwt.ExpiredSignatureError:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED, detail="Token expired")
+#     except jwt.JWTError:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")

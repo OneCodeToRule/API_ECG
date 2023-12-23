@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from app.api.endpoints import authentication
-
-from app.api.endpoints import ecg
+from app.infrastructure.endpoints import authentication, ecg
 
 
 app = FastAPI()
