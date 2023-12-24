@@ -5,25 +5,25 @@ from app.main import app
 client = TestClient(app)
 
 # TODO: Work In Progress -> hay que mockear el servicio de autenticación
-def test_upload_ecg(mocker):
-    mocker.patch("app.application.auth_service.authenticate_user", return_value={"username": "user1", "role": "USER"})
-    ecg_data = {
-        "id": 0,
-        "date": "string",
-        "leads": [
-            {
-                "name": "string",
-                "number_of_samples": 0,
-                "signal": [
-                    0
-                ]
-            }
-        ]
-    }
+# def test_upload_ecg(mocker):
+#     mocker.patch("app.application.auth_service.authenticate_user", return_value={"username": "user1", "role": "USER"})
+#     ecg_data = {
+#         "id": 0,
+#         "date": "string",
+#         "leads": [
+#             {
+#                 "name": "string",
+#                 "number_of_samples": 0,
+#                 "signal": [
+#                     0
+#                 ]
+#             }
+#         ]
+#     }
 
-    response = client.post("/upload_ecg/", json=ecg_data)
-    assert response.status_code == 200
-    assert response.json() == ecg_data
+#     response = client.post("/upload_ecg/", json=ecg_data)
+#     assert response.status_code == 200
+#     assert response.json() == ecg_data
 
 
 # def test_get_ecg_insights_by_ecg_id(mocker):

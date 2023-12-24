@@ -1,16 +1,14 @@
 # API_ECG
+
+## Requirements
+Python 3.10 is required.
+
 ## Execution 
 Create virtual environment
 ```bash
 sudo apt install python3.10-venv
 python3 -m venv .venv
 source .venv/bin/activate
-```
-
-Install FastAPI and Uvicorn
-```bash
-pip install fastapi
-pip install uvicorn
 ```
 
 Install dependencies
