@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
 from app.application.ecg_service import ECGNotFoundException, add_ecg, get_insights_by_ecg_id
 
-from app.application.auth_user import oauth2_scheme
-from app.domain.models import ECG, User, ECGInsights
+from app.application.auth_service import oauth2_scheme
+from app.domain.models import ECG, User
 
 
 router = APIRouter()

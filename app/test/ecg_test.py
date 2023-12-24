@@ -4,9 +4,9 @@ from app.main import app
 
 client = TestClient(app)
 
-# TODO: WIP
+# TODO: Work In Progress -> hay que mockear el servicio de autenticación
 def test_upload_ecg(mocker):
-    mocker.patch("app.application.auth_user.authenticate_user", return_value={"username": "user1", "role": "USER"})
+    mocker.patch("app.application.auth_service.authenticate_user", return_value={"username": "user1", "role": "USER"})
     ecg_data = {
         "id": 0,
         "date": "string",
